@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Gmail Keyboard Shortcuts for FogBugz",
+  "description": "Use the Gmail keyboard shortcuts you know and love for navigating FogBugz.",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["http://*.fogbugz.com/*", "https://*.fogbugz.com/*"],
+      "js": ["jquery.js", "content_script.js"]  
+    }
+  ],
+  "permissions": [
+    "http://*.fogbugz.com/",
+    "https://*.fogbugz.com/"
+  ]
+}
