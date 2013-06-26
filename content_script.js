@@ -276,6 +276,12 @@
           $resolve.get(0).click();
           return cancel(e);
         }
+      } else if (isFilterView() && !modified) {
+        var $resolve = $('[data-s-action="resolve"]');
+        if ($resolve.length > 0) {
+          $resolve.get(0).click();
+          return cancel(e);
+        }
       }
 
     } else if (key === koi.f) {
@@ -299,7 +305,7 @@
       
       } else if (isFilterView() && !modified) {
         var $spam = $('[data-s-action="spam"]');
-        if ($spam.length) {
+        if ($spam.length > 0) {
           $spam.get(0).click();
           return cancel(e);
         }
