@@ -296,6 +296,13 @@
           $star.get(0).click();
           return cancel(e);
         }
+      
+      } else if (isFilterView() && !modified) {
+        var $spam = $('[data-s-action="spam"]');
+        if ($spam.length) {
+          $spam.get(0).click();
+          return cancel(e);
+        }
       }
 
     } else if (key === koi.i) {
