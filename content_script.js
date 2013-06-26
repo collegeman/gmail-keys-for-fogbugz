@@ -13,7 +13,9 @@
     'enter': 13,
     'tab': 9,
     'slash': 191,
-    'esc': 27
+    'esc': 27,
+    '8': 56,
+    'u': 85
   };
 
   var enabled = true,
@@ -192,7 +194,25 @@
           return cancel(e);
         }
       }
-      
+
+    } else if (key === koi['8']) {
+
+      if (isCaseView() && e.shiftKey) {
+        var $star = $('.favorite-toggle');
+        if ($star.length > 0) {
+          $star.get(0).click();
+          return cancel(e);
+        }
+      }
+
+    } else if (key === koi.u) {
+
+      $undo = $('a.spam-undo');
+      if ($undo.length > 0) {
+        $undo.get(0).click();
+        return cancel(e);
+      }
+
     } else if (key === koi.r) {
 
       if (isCaseView() && !modified) {
@@ -297,9 +317,9 @@
     } else if (key === koi.s) {
 
       if (isCaseView() && !modified) {
-        var $star = $('.favorite-toggle');
-        if ($star.length > 0) {
-          $star.get(0).click();
+        var $spam = $('[name="spam"]');
+        if ($spam.length > 0) {
+          $spam.get(0).click();
           return cancel(e);
         }
       
