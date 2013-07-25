@@ -15,7 +15,8 @@
     'slash': 191,
     'esc': 27,
     '8': 56,
-    'u': 85
+    'u': 85,
+    'x': 88
   };
 
   var enabled = true,
@@ -300,6 +301,16 @@
         var $resolve = $('[data-s-action="resolve"]');
         if ($resolve.length > 0) {
           $resolve.get(0).click();
+          return cancel(e);
+        }
+      }
+
+    } else if (key === koi.x) {
+
+      if (isCaseView() && !modified) {
+        var $close = $('[name="close"]');
+        if ($close.length > 0) {
+          $close.get(0).click();
           return cancel(e);
         }
       }
